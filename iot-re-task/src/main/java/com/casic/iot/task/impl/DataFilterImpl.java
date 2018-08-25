@@ -4,12 +4,9 @@ import com.casic.iot.task.TaskFilter;
 import com.casic.iot.task.TaskFilterChain;
 import com.casic.iot.task.TaskRequest;
 import com.casic.iot.task.TaskResponse;
-import com.github.ltsopensource.core.cluster.Node;
-import com.github.ltsopensource.core.commons.utils.StringUtils;
-import com.github.ltsopensource.core.listener.MasterChangeListener;
-import com.github.ltsopensource.core.logger.Logger;
-import com.github.ltsopensource.core.logger.LoggerFactory;
-import com.github.ltsopensource.spring.boot.annotation.MasterNodeListener;
+import com.github.ltsopensource.core.json.JSON;
+import com.github.ltsopensource.core.json.JSONArray;
+import com.github.ltsopensource.core.json.JSONObject;
 
 /**
  * json数据过滤器
@@ -19,8 +16,10 @@ public class DataFilterImpl implements TaskFilter {
  
 	@Override
 	public void doFilter(TaskRequest request, TaskResponse response, TaskFilterChain chain) {
-		response.responseStr = request.getRequestStr().replace("<", "[")
-				.replace(">", "]");
+		//TODO 将json转化成JSONObject
+		JSONObject jsonObject = JSON.parseObject(request.getRequestStr());
+		JSONArray data = jsonObject.getJSONArray("data");
+		
 		chain.doFilter(request, response, chain);
 	}
 }
