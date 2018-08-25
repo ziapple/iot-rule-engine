@@ -5,9 +5,9 @@ package com.casic.iot.task;
  */
 public class TaskRequest {
 	//请求的数据
-	public String requestStr;
+	private String requestStr;
 	//请求的租户ID
-	public String tenantID;
+	private String tenantID;
 
 	public TaskRequest(){
 
