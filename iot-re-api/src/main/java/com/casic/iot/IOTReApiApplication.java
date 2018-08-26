@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableJobClient
 @ComponentScan("com.casic.iot")
-public class IotReApiApplication {
+public class IOTReApiApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(IotReApiApplication.class, args);
+		SpringApplication.run(IOTReApiApplication.class, args);
 	}
 }

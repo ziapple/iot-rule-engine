@@ -9,10 +9,10 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableTaskTracker
 @ComponentScan("com.casic.iot")
-public class IotReTaskApplication {
+public class IOTReTaskApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(IotReTaskApplication.class, args);
+        SpringApplication.run(IOTReTaskApplication.class, args);
     }
 
 }
