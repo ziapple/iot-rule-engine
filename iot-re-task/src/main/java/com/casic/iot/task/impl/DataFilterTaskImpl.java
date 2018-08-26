@@ -19,10 +19,7 @@ public class DataFilterTaskImpl implements TaskFilter {
 		//将json转化成JSONObject
 		JSONObject jsonObject = JSON.parseObject(request.getRequestStr());
 		JSONArray jsonArray = jsonObject.getJSONArray("data");
-		for(Object row : jsonArray.toArray()){
-			JSONObject rowObject = (JSONObject) row;
-			System.out.println("处理数据：" + rowObject);
-		}
+
 
 		//TODO 将过滤后的数据变成字符串
 		request.setRequestStr(jsonObject.toJSONString());

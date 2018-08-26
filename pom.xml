@@ -11,8 +11,6 @@
         <module>iot-re-task</module>
         <module>iot-re-api</module>
         <module>iot-re-core</module>
-        <module>demo</module>
-        <module>iot-demo</module>
     </modules>
     <packaging>pom</packaging>
     <url>https://github.com/ziapple/iot-rule-engine.git</url>
@@ -260,6 +258,10 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

@@ -12,6 +12,7 @@ import com.github.ltsopensource.tasktracker.Result;
 import com.github.ltsopensource.tasktracker.runner.JobContext;
 import com.github.ltsopensource.tasktracker.runner.JobRunner;
 
+import java.util.Date;
 import java.util.Map;
 
 public class MockMQTTJobImpl implements JobRunner {
@@ -28,8 +29,10 @@ public class MockMQTTJobImpl implements JobRunner {
             Thread.currentThread().sleep(1000);
             String requestData = "{equipmentId:10000,data:[" +
                     "{temp:'35.6', kw: '52.5'}," +
-                    "{temp:'42.6', kw: '100.5'}," +
+                    "{temp:'42.6', kw: '100.5'}" +
                     "]}";
+
+            System.out.println("taskID:" + jobContext.getJob().getTaskId() + ",拉取MQTT数据：" + new Date() + requestData);
             TaskRequest request = new TaskRequest();
             request.setTenantID(tenantID);
             request.setRequestStr(requestData);

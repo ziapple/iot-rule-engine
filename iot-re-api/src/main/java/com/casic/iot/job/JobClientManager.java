@@ -1,8 +1,15 @@
 package com.casic.iot.job;
 
 import com.casic.iot.core.RuleEngineJobDetail;
+import com.github.ltsopensource.cmd.DefaultHttpCmd;
+import com.github.ltsopensource.cmd.HttpCmd;
+import com.github.ltsopensource.cmd.HttpCmdClient;
+import com.github.ltsopensource.cmd.HttpCmdResponse;
+import com.github.ltsopensource.core.cmd.HttpCmdNames;
 import com.github.ltsopensource.core.commons.utils.StringUtils;
+import com.github.ltsopensource.core.commons.utils.WebUtils;
 import com.github.ltsopensource.core.domain.Job;
+import com.github.ltsopensource.core.json.JSON;
 import com.github.ltsopensource.core.logger.Logger;
 import com.github.ltsopensource.core.logger.LoggerFactory;
 import com.github.ltsopensource.jobclient.JobClient;
@@ -10,6 +17,10 @@ import com.github.ltsopensource.jobclient.domain.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author zouping on 2018.08.24.
@@ -25,14 +36,19 @@ public class JobClientManager{
     @Value("${lts.tasktracker.node-group}")
     private String taskGroup;
 
+    @Value("${lts.admin.url}")
+    private String adminUrl;
+
+    //lts-admin的api前缀
+    private String ADMIN_API = "api/job-queue";
+
     /**
      * 提交实时任务
      * TaskTrackerNodeGroup：任务作业集群名称
      */
-    public void submitRealtimeJob(RuleEngineJobDetail ruleEngineJob) {
+    public Response submitRealtimeJob(RuleEngineJobDetail ruleEngineJob) {
         Job job = new Job();
-        job.setTaskId(StringUtils.generateUUID());
-
+        job.setTaskId(ruleEngineJob.getTaskId());
         job.setParam(RuleEngineJobDetail.TENANT_ID, ruleEngineJob.getTenantID());
 
         //设置任务的数据来源和处理任务类型
@@ -48,6 +64,21 @@ public class JobClientManager{
 
         LOGGER.info("任务提交{}", ruleEngineJob.toString());
         Response response = jobClient.submitJob(job);
-        System.out.println(response);
+        return response;
+    }
+
+    /**
+     * 取消任务
+     * @param taskId 任务Id
+     */
+    public Response cancelJob(String taskId) throws IOException {
+        Map<String, String> params = new HashMap<>();
+        params.put("taskId", taskId);
+        params.put("taskTrackerNodeGroup", taskGroup);
+        Map<String, String> headMap = new HashMap<>();
+        //默认admin/admin
+        headMap.put("Authorization", "Basic YWRtaW46YWRtaW4=");
+        String result = WebUtils.doPost(adminUrl + "/" + ADMIN_API + "/executing-task-terminate", params, "utf-8",3000, 30000, headMap);
+        return JSON.parse(result, Response.class);
     }
 }

@@ -7,7 +7,10 @@ import java.util.Map;
  * 从用户那将任务转化成RuleEngineJob
  * 规则引擎的全部参数设置
  */
-public class RuleEngineJobDetail {
+public class RuleEngineJobDetail{
+    //任务唯一标识
+    public String taskId;
+
     //租户ID，必填
     public static final String TENANT_ID = "TENANT_ID";
 
@@ -65,6 +68,13 @@ public class RuleEngineJobDetail {
     //mqtt,datafilter,tsdb,kafka等参数配置
     private Map<String, String> params = new HashMap<>();
 
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
 
     public String getTenantID() {
         return tenantID;
