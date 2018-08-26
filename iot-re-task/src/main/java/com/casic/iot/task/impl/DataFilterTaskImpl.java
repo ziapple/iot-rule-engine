@@ -12,14 +12,20 @@ import com.github.ltsopensource.core.json.JSONObject;
  * json数据过滤器
  * @author zouping on 2018.08.24
  */
-public class DataFilterImpl implements TaskFilter {
+public class DataFilterTaskImpl implements TaskFilter {
  
 	@Override
 	public void doFilter(TaskRequest request, TaskResponse response, TaskFilterChain chain) {
-		//TODO 将json转化成JSONObject
+		//将json转化成JSONObject
 		JSONObject jsonObject = JSON.parseObject(request.getRequestStr());
-		JSONArray data = jsonObject.getJSONArray("data");
-		
+		JSONArray jsonArray = jsonObject.getJSONArray("data");
+		for(Object row : jsonArray.toArray()){
+			JSONObject rowObject = (JSONObject) row;
+			System.out.println("处理数据：" + rowObject);
+		}
+
+		//TODO 将过滤后的数据变成字符串
+		request.setRequestStr(jsonObject.toJSONString());
 		chain.doFilter(request, response, chain);
 	}
 }

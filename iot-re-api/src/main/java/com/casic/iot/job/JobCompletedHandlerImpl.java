@@ -15,6 +15,7 @@ import java.util.List;
 // 增加这个注解, 即可作为任务执行结果反馈回调接口(也可以不使用)
 @JobCompletedHandler4JobClient
 public class JobCompletedHandlerImpl implements JobCompletedHandler {
+
     @Override
     public void onComplete(List<JobResult> jobResults) {
         // 任务执行反馈结果处理

@@ -4,7 +4,10 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iot-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iot-re-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iot-re-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iot-re-core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iot-re-task" charset="UTF-8" />
   </component>
 </project>

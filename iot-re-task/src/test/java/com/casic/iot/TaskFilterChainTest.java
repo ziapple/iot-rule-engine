@@ -1,6 +1,6 @@
 package com.casic.iot;
 
-import com.casic.iot.task.impl.DataFilterImpl;
+import com.casic.iot.task.impl.DataFilterTaskImpl;
 import com.casic.iot.task.TaskFilterChain;
 import com.casic.iot.task.TaskRequest;
 import com.casic.iot.task.TaskResponse;
@@ -13,7 +13,7 @@ public class TaskFilterChainTest {
 		TaskResponse response = new TaskResponse();
 		response.setResponseStr("response");
 		TaskFilterChain fc = new TaskFilterChain();
-		fc.addFilter(new DataFilterImpl());
+		fc.addFilter(new DataFilterTaskImpl());
 		fc.doFilter(request, response, fc);
 		System.out.println("request = " + request.getRequestStr());
 		System.out.println("response = " + response.getResponseStr());

@@ -4,19 +4,25 @@
 	<parent>
 		<artifactId>iot-re-parent</artifactId>
 		<groupId>com.casic.iot</groupId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.casic.iot</groupId>
 	<artifactId>iot-re-api</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>iot-re-api</name>
 	<description>1. 对外访问接口 2. 相当于jobclient,向集群提交作业</description>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.casic.iot</groupId>
+			<artifactId>iot-re-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ltsopensource</groupId>
+			<artifactId>lts</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -25,22 +31,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.github.ltsopensource</groupId>
-			<artifactId>lts-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.ltsopensource</groupId>
-			<artifactId>lts-tasktracker</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.ltsopensource</groupId>
-			<artifactId>lts-jobclient</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.github.ltsopensource</groupId>
-			<artifactId>lts-spring</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.javassist</groupId>
