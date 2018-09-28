@@ -43,16 +43,16 @@
 <img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-4.png" alt="数据过滤链条"  width="300" height="240">
 </p>
 
-###（1）	iot-re-api
+### iot-re-api
 iot-ruleengine项目对外暴露的api，client的所有调用的api操作都在这个工程，相当于LTS的Client。<br>
   接口<br>
 * 启动任务api/1.0/Start<br>
 * 停止任务api/1.0/Stop<br>
 * 重启任务api/1.0/Restart<br>
 
-###（2）	iot-re-core
+### iot-re-core
 项目核心包，一些SQL过滤器、DB过滤器、工具类会放在这个工程。<br>
-（3）iot-re-task
+### iot-re-task
 	相当于LTS的TaskTracker。<br>
 
 ## 5	启动工程
