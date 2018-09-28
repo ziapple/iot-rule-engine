@@ -3,8 +3,8 @@
 * 实现数据过滤、数据分发功能，为了接收不同租户任务调度请求，采用高可用的TaskScheduler来实现。
 ## 1 基于高可用的TaskScheduler任务调度的框架
 ###(1）任务场景
-<p>
-<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-1.png" alt="任务场景"  width="250" height="140">
+<p text-align="center">
+<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-1.png" alt="任务场景"  width="450" height="240">
 </p>
 * 租户选择数据规则（选择数据过滤或分发到目的地）Task1
 * 点击启动，客户端JobClient向任务调度中心JobTracker发送任务调度Task1
@@ -15,8 +15,8 @@
 健壮稳定性。具体网址：https://gitee.com/hugui/light-task-scheduler
 
 ## 2 基于TaskScheduler租户MQTT调度模型
-<p>
-<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-2.png" alt="规则引擎"  width="250" height="140">
+<p text-align="center">
+<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-2.png" alt="规则引擎"  width="450" height="340">
 </p>
 
 * 结合实际规则引擎具体任务，任务场景如下：<br>
@@ -29,8 +29,8 @@
 ## 3 基于责任链的RuleEngineTask设计模式
   RuleEngineTask是整个规则引擎数据处理的核心类，前面主要负责设备数据如何经过LTB的处理交给不同的节点去处理，最后都是交给每个节点的RuleEngineTask来完成任务，
   每个节点上的RuleEngineTask都一样。
-<p>
-<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-3.png" alt="规则设计模式"  width="250" height="140">
+<p text-align="center">
+<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-3.png" alt="规则设计模式"  width="550" height="120">
 </p>
 
 (1)RuleEnineTask是一个标准的责任链模式，同样的数据从一条链上穿过，交给不同的数据过滤器去处理；<br>
@@ -38,8 +38,8 @@
 (3)DBFilter<br>
 数据库过滤器，将数据分发到不同的数据库，例如：TSDBFilter，分发给时序数据库，MongoFilter，分发给MongoDB数据库。DBFilter不支持用户自定义转发规则，Json数据会按照设备分表，每个Json字段对应数据库的表字段。一个设备对应一张表，一个Json对应一个表子段。
 ## 4 项目结构
-<p>
-<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-4.png" alt="数据过滤链条"  width="250" height="140">
+<p text-align="center">
+<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-4.png" alt="数据过滤链条"  width="350" height="240">
 </p>
 
 ###（1）	iot-re-api
@@ -63,8 +63,8 @@ iot-ruleengine项目对外暴露的api，client的所有调用的api操作都在
 ## 6	基于Dubbo的平台Kafka动态数据分发总体架构<br>
 如果是从平台的Kafka直接拉取数据，需要从全网设备数据中取筛选租户所需要的数据，数据处理量极大，架构上选择Dubbo分布式调度来处理，<br>
 将全网数据负载到不同的节点上进行处理。<br>
-<p>
-<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-5.png" alt="Dubbo分发模式"  width="250" height="140">
+<p text-align="center">
+<img src="https://github.com/ziapple/iot-rule-engine/blob/master/iot-docs/3-5.png" alt="Dubbo分发模式"  width="550" height="340">
 </p>
 
 
