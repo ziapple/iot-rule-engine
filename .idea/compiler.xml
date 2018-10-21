@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="iot-re-api" />
         <module name="iot-re-core" />
+        <module name="iot-re-db" />
         <module name="iot-re-task" />
       </profile>
     </annotationProcessing>

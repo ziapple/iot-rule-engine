@@ -8,9 +8,9 @@
     <artifactId>iot-re-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>iot-re-task</module>
         <module>iot-re-api</module>
         <module>iot-re-core</module>
+        <module>iot-re-job</module>
     </modules>
     <packaging>pom</packaging>
     <url>https://github.com/ziapple/iot-rule-engine.git</url>
@@ -51,6 +51,8 @@
         <quartz.version>2.2.2</quartz.version>
         <javassist.version>3.20.0-GA</javassist.version>
         <mqtt.paho.version>1.2.0</mqtt.paho.version>
+        <c3p0.version>0.9.1.2</c3p0.version>
+        <commons.lang3.version>3.4</commons.lang3.version>
     </properties>
 
     <dependencyManagement>
@@ -230,6 +232,25 @@
                 <groupId>org.eclipse.paho</groupId>
                 <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
                 <version>${mqtt.paho.version}</version>
+            </dependency>
+
+            <!-- mysql 连接池 -->
+            <dependency>
+                <groupId>c3p0</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>${c3p0.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

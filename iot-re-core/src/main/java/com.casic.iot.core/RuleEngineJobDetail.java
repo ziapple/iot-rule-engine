@@ -44,12 +44,13 @@ public class RuleEngineJobDetail{
     //过滤规则，采用类SQL方式，"temp>50 and kw<100"
     public static final String DATA_FILTER = "DATA_FILTER";
 
-    //TDSB任务标识，可选
-    public static final String TASK_TSDB = "TASK_TSDB";
-    //TSDB配置参数
-    public static final String TSDB_CONN = "TSDB_HOST";
-    public static final String TSDB_USERNAME = "TSDB_USERNAME";
-    public static final String TSDB_PASSWORD = "TSDB_PASSWORD";
+    //写入数据库DB任务标识，可选
+    public static final String TASK_TSDB = "TASK_DB";
+    //DB配置参数
+    public static final String DB_CONN = "DB_HOST";
+    public static final String DB_URL = "DB_URL";
+    public static final String DB_USERNAME = "DB_USERNAME";
+    public static final String DB_PASSWORD = "DB_PASSWORD";
 
     //Kafka任务标识，可选
     public static final String TASK_KAFKA = "TASK_KAFKA";

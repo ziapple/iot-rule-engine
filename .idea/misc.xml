@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/iot-demo/pom.xml" />
         <option value="$PROJECT_DIR$/iot-re-core/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-re-influxdb/pom.xml" />
       </set>
     </option>
   </component>

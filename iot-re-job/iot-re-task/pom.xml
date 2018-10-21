@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.casic.iot</groupId>
+        <artifactId>iot-re-job</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <description>1. 任务执行者 2. 相当于tasktracker，具有高可用，弹性伸缩功能 3. 采用过滤链模式对数据进行过滤</description>
+
+    <artifactId>iot-re-task</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.casic.iot</groupId>
+            <artifactId>iot-re-db</artifactId>
+        </dependency>
+    </dependencies>
+</project>
