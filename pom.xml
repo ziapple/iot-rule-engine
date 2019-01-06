@@ -38,7 +38,7 @@
         <sleepycat.version>5.0.73</sleepycat.version>
         <rocksdbjni.version>3.10.1</rocksdbjni.version>
         <h2.version>1.4.189</h2.version>
-        <springframework.version>4.3.17.RELEASE</springframework.version>
+        <springframework.version>4.3.18.RELEASE</springframework.version>
         <mina.version>2.0.9</mina.version>
         <hessian.version>4.0.38</hessian.version>
         <mapdb.version>2.0-beta10</mapdb.version>
