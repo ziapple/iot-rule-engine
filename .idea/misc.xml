@@ -5,13 +5,13 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-re-core/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/demo/pom.xml" />
         <option value="$PROJECT_DIR$/iot-demo/pom.xml" />
-        <option value="$PROJECT_DIR$/iot-re-core/pom.xml" />
         <option value="$PROJECT_DIR$/iot-re-influxdb/pom.xml" />
       </set>
     </option>

@@ -1,7 +1,6 @@
 package com.casic.iot.core.sql.filter;
 
 import com.alibaba.fastjson.JSONArray;
-import com.casic.iot.core.sql.SQLCondition;
 
 public class SQLRequest {
     //原始数据

@@ -2,20 +2,15 @@ package com.casic.iot.web;
 
 import com.casic.iot.core.RuleEngineJobDetail;
 import com.casic.iot.job.JobClientManager;
-import com.github.ltsopensource.cmd.DefaultHttpCmd;
-import com.github.ltsopensource.cmd.HttpCmd;
-import com.github.ltsopensource.cmd.HttpCmdClient;
-import com.github.ltsopensource.cmd.HttpCmdResponse;
-import com.github.ltsopensource.core.cmd.HttpCmdNames;
 import com.github.ltsopensource.core.commons.utils.StringUtils;
 import com.github.ltsopensource.core.domain.Action;
 import com.github.ltsopensource.jobclient.domain.Response;
+import com.github.ltsopensource.tasktracker.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.github.ltsopensource.tasktracker.Result;
 
 import java.io.IOException;
 

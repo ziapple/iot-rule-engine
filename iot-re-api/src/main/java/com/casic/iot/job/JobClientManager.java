@@ -1,12 +1,6 @@
 package com.casic.iot.job;
 
 import com.casic.iot.core.RuleEngineJobDetail;
-import com.github.ltsopensource.cmd.DefaultHttpCmd;
-import com.github.ltsopensource.cmd.HttpCmd;
-import com.github.ltsopensource.cmd.HttpCmdClient;
-import com.github.ltsopensource.cmd.HttpCmdResponse;
-import com.github.ltsopensource.core.cmd.HttpCmdNames;
-import com.github.ltsopensource.core.commons.utils.StringUtils;
 import com.github.ltsopensource.core.commons.utils.WebUtils;
 import com.github.ltsopensource.core.domain.Job;
 import com.github.ltsopensource.core.json.JSON;

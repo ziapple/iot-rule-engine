@@ -1,9 +1,9 @@
 package com.casic.iot;
 
-import com.casic.iot.task.impl.DataFilterTaskImpl;
 import com.casic.iot.task.TaskFilterChain;
 import com.casic.iot.task.TaskRequest;
 import com.casic.iot.task.TaskResponse;
+import com.casic.iot.task.impl.DataFilterTaskImpl;
 
 public class TaskFilterChainTest {
 	public static void main(String[] args) {

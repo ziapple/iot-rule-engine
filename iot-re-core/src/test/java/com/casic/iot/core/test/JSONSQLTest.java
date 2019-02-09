@@ -6,7 +6,6 @@ import com.alibaba.fastjson.JSONArray;
 import com.casic.iot.core.sql.SQLCondition;
 import com.casic.iot.core.sql.SQLParser;
 import com.casic.iot.core.sql.filter.*;
-import com.casic.iot.core.sql.filter.SQLITFilter;
 
 public class JSONSQLTest {
     static String jsonStr = "[{tmp:56,kw:120,color:'white'},{tmp:78,kw:46,color:'red'},{tmp:104,kw:234,color:'white'}]";

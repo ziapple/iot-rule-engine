@@ -1,9 +1,6 @@
 package com.casic.iot.job;
 
 import com.casic.iot.core.RuleEngineJobDetail;
-import com.casic.iot.task.TaskFilterChain;
-import com.casic.iot.task.TaskRequest;
-import com.casic.iot.task.TaskResponse;
 import com.github.ltsopensource.core.domain.Action;
 import com.github.ltsopensource.tasktracker.Result;
 import com.github.ltsopensource.tasktracker.runner.JobContext;
