@@ -1,5 +1,6 @@
 package com.casic.iot.task.impl;
 
+import com.casic.iot.core.sql.SQLParser;
 import com.casic.iot.task.TaskFilter;
 import com.casic.iot.task.TaskFilterChain;
 import com.casic.iot.task.TaskRequest;
@@ -10,7 +11,8 @@ import com.casic.iot.task.TaskResponse;
  * @author zouping on 2018.08.24
  */
 public class DataFilterTaskImpl implements TaskFilter {
- 
+	static String sql = "select tmp,kw from t where tmp<100 and kw>56 and color!='white'";
+
 	@Override
 	public void doFilter(TaskRequest request, TaskResponse response, TaskFilterChain chain) {
 		String json = response.getResponseStr()==null?request.getRequestStr():response.getResponseStr();
@@ -53,6 +55,10 @@ public class DataFilterTaskImpl implements TaskFilter {
 	 * @return
 	 */
 	public String parseJson(String json){
+		//用策略模式来实现，一个算法一个类，TODO
+		SQLParser sqlParser = new SQLParser(sql);
+		sqlParser.parse();
+
 		return json;
 	}
 }

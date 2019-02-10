@@ -32,10 +32,10 @@ public class IOTReApiController {
         //将数据来源设置成MQTT
         ruleEngineJob.setJobMQ(RuleEngineJobDetail.MQ_MQTT);
         //MQTT设置
-        ruleEngineJob.getParams().put(RuleEngineJobDetail.MQ_MQTT_HOST, "127.0.0.1");
-        ruleEngineJob.getParams().put(RuleEngineJobDetail.MQ_MQTT_TOPIC, "topic");
+        ruleEngineJob.getParams().put(RuleEngineJobDetail.MQ_MQTT_HOST, "tcp://106.13.63.214:1883");
+        ruleEngineJob.getParams().put(RuleEngineJobDetail.MQ_MQTT_TOPIC, "mqtt/test");
         ruleEngineJob.getParams().put(RuleEngineJobDetail.MQ_MQTT_USERNAME, "admin");
-        ruleEngineJob.getParams().put(RuleEngineJobDetail.MQ_MQTT_PASSWORD, "admin");
+        ruleEngineJob.getParams().put(RuleEngineJobDetail.MQ_MQTT_PASSWORD, "public");
         //将任务处理设置成TASK_DATA和TASK_DB
         ruleEngineJob.setJobTask(RuleEngineJobDetail.TASK_DATA + "," + RuleEngineJobDetail.TASK_TSDB);
         //数据过滤规则设置

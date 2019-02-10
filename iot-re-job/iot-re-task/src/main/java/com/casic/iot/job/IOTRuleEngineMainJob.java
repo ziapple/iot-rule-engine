@@ -44,6 +44,8 @@ public class IOTRuleEngineMainJob implements JobRunner {
             bizLogger.info("执行租户:" + tenantID + "的规则过滤任务");
 
             if(jobMQ.equals(RuleEngineJobDetail.MQ_MQTT)){//数据来源于MQTT
+                //JobRunner job = new TenantMQTTJobImpl();
+                //模拟客户端数据发送
                 JobRunner job = new MockMQTTJobImpl();
                 return job.run(jobContext);
             }else if(jobMQ.equals(RuleEngineJobDetail.MQ_KAFKA)){//数据来源于Kafka
